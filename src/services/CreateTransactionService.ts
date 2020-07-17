@@ -22,9 +22,9 @@ class CreateTransactionService {
         title: category,
       },
     });
-    console.log(category);
+
     if(!transactionCategory){
-      console.log(transactionCategory);
+
       transactionCategory = categoriesRepository.create({
         title:category
       });
@@ -32,7 +32,6 @@ class CreateTransactionService {
       await categoriesRepository.save(transactionCategory);
     }
 
-    console.log(transactionCategory);
     const transaction = transactionRepository.create({
       title, 
       value, 
